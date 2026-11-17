@@ -9,6 +9,10 @@ $sql = "SELECT usucod AS ID, usunom AS NOME, ususen AS SENHA, usutip AS TIPO FRO
 $prp = $pdo->prepare($sql);
 $prp->execute();
 
+while($data=$prp->fetchall()){
+    echo $data ['usunom'];
+}
+
 ?>
 <form>
     <div class="form-group mt-2">
