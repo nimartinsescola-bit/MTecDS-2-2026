@@ -4,6 +4,11 @@ require '../../../config/header.php';
 $pdo = Conexao::conectar();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $msg = '';
+
+$sql = "SELECT usucod AS ID, usunom AS NOME, ususen AS SENHA, usutip AS TIPO FROM usuarios ORDER BY usunom;";
+$prp = $pdo->prepare($sql);
+$prp->execute();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $sql = "";
