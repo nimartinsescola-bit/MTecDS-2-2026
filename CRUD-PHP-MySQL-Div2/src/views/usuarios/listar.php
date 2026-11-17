@@ -9,16 +9,6 @@ $sql = "SELECT usucod AS ID, usunom AS NOME, ususen AS SENHA, usutip AS TIPO FRO
 $prp = $pdo->prepare($sql);
 $prp->execute();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-    $sql = "";
-    $prp = $pdo->prepare($sql);
-    if ($prp->execute([])) {
-        $msg = '<span class="alert alert-success text-center">DADOS GRAVADOS COM SUCESSO!</span>';
-    } else {
-        $msg = '<span class="alert alert-danger text-center">ERRO AO GRAVAR OS DADOS!</span>';
-    }
-}
 ?>
 <form>
     <div class="form-group mt-2">
